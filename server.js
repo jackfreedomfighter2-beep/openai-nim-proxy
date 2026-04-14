@@ -29,7 +29,11 @@ const MODEL_MAPPING = {
   'claude-3-opus': 'openai/gpt-oss-120b',
   'claude-3-sonnet': 'openai/gpt-oss-20b',
   'gemini-pro': 'qwen/qwen3-next-80b-a3b-thinking',
-  'gpt-4o-mini': 'deepseek-ai/deepseek-v3-2'
+  'gpt-4o-mini': 'deepseek-ai/deepseek-v3.2',
+  'gpt-4-32k': 'deepseek-ai/deepseek-v1-terminus',
+  'claude-3-haiku': 'stepfun-ai/stepflash-3.5',
+  'gemini-pro-vision': 'z-ai/glm-4.7',
+  'gemini-1.5-pro': 'meta/llama-3.3-70b-instruct'
 };
 
 // Health check endpoint
