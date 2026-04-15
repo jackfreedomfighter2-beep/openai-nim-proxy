@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
-app.use(express.json({ limit: '100mb' })); app.use(express.urlencoded({ limit: '100mb', extended: true }));
+app.use(express.json());
 
 // NVIDIA NIM API configuration
 const NIM_API_BASE = process.env.NIM_API_BASE || 'https://integrate.api.nvidia.com/v1';
@@ -96,7 +96,7 @@ app.post('/v1/chat/completions', async (req, res) => {
       model: nimModel,
       messages: messages,
       temperature: temperature || 0.6,
-      max_tokens: max_tokens || 32768,
+      max_tokens: max_tokens || 9024,
       extra_body: ENABLE_THINKING_MODE ? { chat_template_kwargs: { thinking: true } } : undefined,
       stream: stream || false
     };
@@ -214,6 +214,36 @@ app.post('/v1/chat/completions', async (req, res) => {
     }
     
   } catch (error) {
+    // Handle 410 Gone - model deprecated/removed, retry with fallback
+    if (error.response?.status === 410) {
+      console.warn(`Model returned 410 Gone. Falling back to deepseek-ai/deepseek-v3.1`);
+      try {
+        const fallbackResponse = await axios.post(`${NIM_API_BASE}/chat/completions`, {
+          ...req.body,
+          model: 'deepseek-ai/deepseek-v3.1'
+        }, {
+          headers: {
+            'Authorization': `Bearer ${NIM_API_KEY}`,
+            'Content-Type': 'application/json'
+          }
+        });
+        return res.json({
+          id: `chatcmpl-${Date.now()}`,
+          object: 'chat.completion',
+          created: Math.floor(Date.now() / 1000),
+          model: req.body.model,
+          choices: fallbackResponse.data.choices.map(choice => ({
+            index: choice.index,
+            message: { role: choice.message.role, content: choice.message.content || '' },
+            finish_reason: choice.finish_reason
+          })),
+          usage: fallbackResponse.data.usage || { prompt_tokens: 0, completion_tokens: 0, total_tokens: 0 }
+        });
+      } catch (fallbackError) {
+        console.error('Fallback also failed:', fallbackError.message);
+      }
+    }
+
     console.error('Proxy error:', error.message);
     
     res.status(error.response?.status || 500).json({
