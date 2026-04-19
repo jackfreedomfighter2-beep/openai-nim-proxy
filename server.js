@@ -25,10 +25,10 @@ const MODEL_MAPPING = {
   'gpt-3.5-turbo': 'stepfun-ai/step-3.5-flash',
   'gpt-4': 'z-ai/glm-5',
   'gpt-4-turbo': 'deepseek-ai/deepseek-v3.1-terminus',
-  'gpt-4o': 'deepseek-ai/deepseek-v3.1',
+  'gpt-4o': 'deepseek-ai/deepseek-v3.2',
   'claude-3-opus': 'minimax/m2.5',
   'claude-3-sonnet': 'mistralai/ministral-14b-instruct-0905',
-  'gemini-pro': 'mistralai/ministral-14b-instruct-0905'
+  'gemini-pro': 'moonshotai/kimi-k2-instruct-0905'
 };
 
 // Health check endpoint
