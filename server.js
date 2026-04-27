@@ -25,7 +25,7 @@ const MODEL_MAPPING = {
   'gpt-3.5-turbo': 'stepfun-ai/step-3.5-flash',
   'gpt-4': 'z-ai/glm-5',
   'gpt-4-turbo': 'deepseek-ai/deepseek-v3.1-terminus',
-  'gpt-4o': 'deepseek-ai/deepseek-v3.2',
+  'gpt-4o': 'deepseek-ai/deepseek-v3.1',
   'claude-3-opus': 'qwen/qwen3-235b-a22b',
   'claude-3-sonnet': 'deepseek-ai/deepseek-r1',
   'gemini-pro': 'moonshotai/kimi-k2-instruct-0905'
