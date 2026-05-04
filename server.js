@@ -25,8 +25,8 @@ const MODEL_MAPPING = {
   'gpt-3.5-turbo': 'stepfun-ai/step-3.5-flash',
   'gpt-4': 'meta/llama-3.1-405b-instruct',
   'gpt-4-turbo': 'meta/llama-3.1-70b-instruct',
-  'gpt-4o': 'stockmark/Stockmark-2-100B-Instruct-beta',
-  'claude-3-opus': 'Qwen/Qwen3-Coder-480B-A35B-Instruct',
+  'gpt-4o': 'mistralai/mistral-small-4-119b-2603',
+  'claude-3-opus': 'mistralai/mistral-nemotron',
   'claude-3-sonnet': 'mistralai/mistral-large-3-675b-instruct-2512',
   'gemini-pro': 'google/gemma-3n-E4B-it'
 };
