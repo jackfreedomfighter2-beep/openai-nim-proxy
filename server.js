@@ -24,11 +24,11 @@ const ENABLE_THINKING_MODE = false; // Set to true to enable chat_template_kwarg
 const MODEL_MAPPING = {
   'gpt-3.5-turbo': 'stepfun-ai/step-3.5-flash',
   'gpt-4': 'meta/llama-3.1-405b-instruct',
-  'gpt-4-turbo': 'gemma-4-31b-it',
+  'gpt-4-turbo': 'meta/llama-3.1-70b-instruct',
   'gpt-4o': 'nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16',
   'claude-3-opus': 'nemotron-3-super-120b-a12b',
-  'claude-3-sonnet': 'dracarys-llama-3.1-70b-instruct',
-  'gemini-pro': 'moonshotai/kimi-k2-instruct-0905'
+  'claude-3-sonnet': 'nemotron-mini-4b-instruct',
+  'gemini-pro': 'llama-3.3-nemotron-super-49b-v1.5'
 };
 
 // Health check endpoint
