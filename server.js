@@ -28,7 +28,7 @@ const MODEL_MAPPING = {
   'gpt-4o': 'stockmark-2-100b-instruct',
   'claude-3-opus': 'qwen3-coder-480b-a35b-instruct',
   'claude-3-sonnet': 'mistral-large-3-675b-instruct-2512',
-  'gemini-pro': 'moonshotai/Kimi-K2-Instruct-0905'
+  'gemini-pro': 'gemma-3n-e4b-it'
 };
 
 // Health check endpoint
