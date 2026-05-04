@@ -25,10 +25,10 @@ const MODEL_MAPPING = {
   'gpt-3.5-turbo': 'stepfun-ai/step-3.5-flash',
   'gpt-4': 'meta/llama-3.1-405b-instruct',
   'gpt-4-turbo': 'meta/llama-3.1-70b-instruct',
-  'gpt-4o': 'nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16',
-  'claude-3-opus': 'nemotron-3-super-120b-a12b',
-  'claude-3-sonnet': 'nemotron-mini-4b-instruct',
-  'gemini-pro': 'llama-3.3-nemotron-super-49b-v1.5'
+  'gpt-4o': 'stockmark-2-100b-instruct',
+  'claude-3-opus': 'qwen3-coder-480b-a35b-instruct',
+  'claude-3-sonnet': 'mistral-large-3-675b-instruct-2512',
+  'gemini-pro': 'moonshotai/Kimi-K2-Instruct-0905'
 };
 
 // Health check endpoint
