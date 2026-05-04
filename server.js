@@ -25,7 +25,7 @@ const MODEL_MAPPING = {
   'gpt-3.5-turbo': 'stepfun-ai/step-3.5-flash',
   'gpt-4': 'nemotron-3-nano-30b-a3b',
   'gpt-4-turbo': 'gemma-4-31b-it',
-  'gpt-4o': 'deepseek-ai/deekseep-v4-pro',
+  'gpt-4o': 'nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16',
   'claude-3-opus': 'nemotron-3-super-120b-a12b',
   'claude-3-sonnet': 'dracarys-llama-3.1-70b-instruct,
   'gemini-pro': 'moonshotai/kimi-k2-instruct-0905'
